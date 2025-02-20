@@ -1,0 +1,10 @@
+# requirements.txt
+pymongo==4.5
+#pydantic==2.3
+requests==2.31
+email-validator==2.0
+typing-extensions==4.8
+django==4.2
+django-ninja-extra==0.19.8
+django-cors-headers==3.10.1
+gunicorn==20.1

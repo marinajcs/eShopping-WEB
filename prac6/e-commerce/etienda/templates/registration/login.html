@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Log In</button>
+    </form>
+
+    <a href="/etienda/" class="btn btn-success">Home</a>
+</div>
+
+{% endblock %}

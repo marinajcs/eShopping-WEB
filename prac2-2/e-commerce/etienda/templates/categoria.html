@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>All products in "{{ category_name }}"</h1>
+
+    <ul>
+        {% for producto in resultados %}
+            <li>
+                <h3>{{ producto.title }}</h3>
+                <img src="{{ producto.image }}" alt="{{ producto.title }}" width="150" height="150">
+                <p>Description: {{ producto.description }}</p>
+                <p>Price: {{ producto.price }}</p>
+                <p>Rating: {{ producto.rating.rate }} | Count: {{ producto.rating.count }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
+

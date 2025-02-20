@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  app:
+    build: ./e-commerce
+    volumes:
+      - ./e-commerce:/e-commerce
+    expose:
+      - "8000"
+    depends_on:
+      - mongo
+    command: gunicorn Ecommerce.wsgi:application -b 0.0.0.0:8000
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "1337:1337"
+      # Agrega la configuración de SSL si es necesario
+      - "443:443"
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d
+      - ./e-commerce/etienda/static:/var/www/static
+    depends_on:
+      - app
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db

@@ -1,0 +1,45 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/womens-fashion.jpg' %}" class="card-img-top" alt="Categoría 1">
+                <div class="card-body">
+                    <h5 class="card-title">Women's fashion</h5>
+                    <a href="/etienda/category/women's clothing" class="btn btn-success">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/mens-fashion.jpg' %}" class="card-img-top" alt="Categoría 2">
+                <div class="card-body">
+                    <h5 class="card-title">Men's fashion</h5>
+                    <a href="/etienda/category/men's clothing" class="btn btn-success" style="width: 75px;">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/jewelery.jpg' %}" class="card-img-top" alt="Categoría 3">
+                <div class="card-body">
+                    <h5 class="card-title">Jewelery</h5>
+                    <a href="/etienda/category/jewelery" class="btn btn-success">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/electronics.jpeg' %}" class="card-img-top" alt="Categoría 4">
+                <div class="card-body">
+                    <h5 class="card-title">Electronics</h5>
+                    <a href="/etienda/category/electronics" class="btn btn-success">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
